@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search your plants</title>
+    <link
+      rel="shortcut icon"
+      href="../images/fav-icon/plant-svgrepo-com.svg"
+      type="image/svg"
+    />
+    <link rel="stylesheet" href="product-filter.css" />
+   
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="container">
+        <!-- navbar -->
+        <div class="search">
+          <div>
+            <a href="../index.html" draggable="false">
+              <span id="logo-name" title="Home"> GREENLY </span>
+            </a>
+          </div>
+          <div>
+            <input
+              type="text"
+              name=""
+              id="find"
+              placeholder="Search "
+              onkeyup="search()"
+            />
+          </div>
+        </div>
+
+    
+        <!-- plants -->
+
+        <div class="product-list">
+          <div class="product">
+            <a href="../caring/apple.html" draggable="false">
+              <img
+                src="../images/plants-search/apple.jpg"
+                draggable="false"
+                alt="Apple"
+              />
+              <div class="name">
+                <h3>apple</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="product">
+            <a href="../caring/beet-root.html" draggable="false">
+              <img
+                src="../images/plants-search/beet-root.jpg"
+                draggable="false"
+                alt="Beet-root"
+              />
+              <div class="name">
+                <h3>beet root</h3>
+              </div>
+            </a>
+          </div>
+          <div class="product">
+            <a href="../caring/cabbage.html" draggable="false">
+              <img
+                src="../images/plants-search/cabbage.jpg"
+                draggable="false"
+                alt="Cabbage"
+              />
+              <div class="name">
+                <h3>cabbage</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="product">
+            <a href="../caring/capsicum.html" draggable="false">
+              <img
+                src="../images/plants-search/capsicum.jpg"
+                draggable="false"
+                alt="Capsicum"
+              />
+              <div class="name">
+                <h3>capsicum</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="product">
+            <a href="../caring/carrot.html" draggable="false">
+              <img
+                src="../images/plants-search/carrot.jpg"
+                draggable="false"
+                alt="carrot"
+              />
+              <div class="name">
+                <h3>carrot</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="product">
+            <a href="../caring/coriander.html" draggable="false">
+              <img
+                src="../images/plants-search/Coriander.jpg"
+                draggable="false"
+                alt="Coriander"
+              />
+              <div class="name">
+                <h3>Coriander</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="product">
+            <a href="../caring/cucumber.html" draggable="false">
+              <img
+                src="../images/plants-search/cucumber.jpg"
+                draggable="false"
+                alt="Cucumber"
+              />
+              <div class="name">
+                <h3>cucumber</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="product">
+            <a href="../caring/eggplant.html" draggable="false">
+              <img
+                src="../images/plants-search/eggplant.jpg"
+                draggable="false"
+                alt="Egg-plant"
+              />
+              <div class="name">
+                <h3>egg plant</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="product">
+            <a href="../caring/mint.html" draggable="false">
+              <img
+                src="../images/plants-search/mint.jpg"
+                draggable="false"
+                alt="Mint"
+              />
+              <div class="name">
+                <h3>mint</h3>
+              </div>
+            </a>
+          </div>
+          <div class="product">
+            <a href="../caring/potato.html" draggable="false">
+              <img
+                src="../images/plants-search/potato.jpg"
+                draggable="false"
+                alt="Potato"
+              />
+              <div class="name">
+                <h3>potato</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="product">
+            <a href="../caring/radish.html" draggable="false">
+              <img
+                src="../images/plants-search/raddish.jpg"
+                draggable="false"
+                alt="Radish"
+              />
+              <div class="name">
+                <h3>radish</h3>
+              </div>
+            </a>
+          </div>
+          <div class="product">
+            <a href="../caring/tomato.html" draggable="false">
+              <img
+                src="../images/plants-search/tomato.jpg"
+                draggable="false"
+                alt="Tomato"
+              />
+              <div class="name">
+                <h3>tomato</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- javascript -->
+    <script>
+      function search() {
+
+        let filter = document.getElementById("find").value;
+        let item = document.querySelectorAll(".product");
+        let name = document.getElementsByTagName("h3");
+        let found=false;
+
+        
+
+        for (var i = 0; i < name.length; i++) {
+          let a = item[i].getElementsByTagName("h3")[0];
+          let value = a.innerHTML || a.innerText || a.textContent;
+
+          if (value.indexOf(filter) > -1) {
+            item[i].style.display = "block";
+            found=true;
+          } 
+          
+          else {
+            item[i].style.display = "none";
+          }
+        }
+
+        if (!found) {
+            setTimeout(() => {
+           
+        alert("Couldn't find the item named as " + filter);
+        location.reload();
+
+        }, 200);
+    } 
+
+       
+    
+      }
+    </script>
+  </body>
+</html>

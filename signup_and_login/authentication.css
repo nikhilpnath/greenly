@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lato&family=Poppins:wght@300;400&family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+:root{
+    --primary-color:#1d2b3a;
+    --primary-sub-color:#00dfc4;
+    --sub-color:white;
+    --black-color:black;
+    --input-font-size: clamp(18px,1.2vw,29px);
+}
+section{
+    position: relative;
+}
+.blur-img{
+    background: url("https://source.unsplash.com/random/100×100/?plant,plantcare,plants") no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.input-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.input-box{
+    width: clamp(270px,25vw,580px);
+   
+}
+ .input-text {
+    position: relative;
+  
+}
+.input-text:not(:nth-child(1)){
+    margin-top: 16px;
+}
+.input-text input{
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    color: var(--sub-color);
+    font-size: var(--input-font-size);
+    border: 1px solid rgba(255,255,255,0.25);
+    background-color: var(--black-color);
+}
+.input-text span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    padding: 12px 10px;
+    font-size: var(--input-font-size);
+    color:var(--sub-color);
+    transition: 0.5s;
+}
+
+.input-text input:valid ~ span,
+.input-text input:focus ~ span 
+{
+    color: var(--primary-color);
+    transform: translate(6px,-6px);
+    font-size: clamp(12px,.9vw,19px);
+    padding: 1px 5px;
+    background-color: var(--primary-sub-color);
+    letter-spacing: 0.2em;
+   border-radius: 3px;
+}
+
+
+#message{
+    display:none;
+    font-size: var(--input-font-size);
+    margin-top: 14px;
+    color: var(--sub-color);
+    padding: 5px 10px;
+}
+
+.signup, .login{
+    text-align: center;
+    margin: 5% 0%;
+}
+.signup button, .login button{
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.25);
+    font-size: clamp(22px,1.6vw,33px);
+    background-color: var(--black-color);
+    color: var(--primary-sub-color);
+    letter-spacing: 0.2em;
+    transition: .5s;
+}
+.signup button:hover,
+.login button:hover
+{
+    color: var(--primary-color);
+    background-color: var(--primary-sub-color);
+    cursor: pointer;
+}
+ .log-in, .sign-up{
+     text-align: center;
+     border: 1px solid rgba(255,255,255,0.25);
+     padding: 10px;
+     border-radius: 5px;
+     background-color: var(--sub-color);
+     font-size:clamp(14px,1.2vw,23px);
+ }
+ .log-in span a,
+ .sign-up span a
+ {
+    color: var(--black-color);
+ }
